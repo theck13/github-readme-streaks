@@ -188,7 +188,7 @@ function fileModifiedTime(string $filename): int
                 </select>
 
                 <details class="advanced">
-                    <summary>⚙ Advanced Options</summary>
+                    <summary>Advanced Options</summary>
                     <div class="content">
                         <div class="radio-buttons parameters" role="radiogroup" aria-labelledby="background-type-label">
                             <!-- Radio buttons to choose between solid and gradient background -->
