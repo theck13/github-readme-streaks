@@ -56,7 +56,7 @@ function fileModifiedTime(string $filename): int
         gtag('js', new Date());
         gtag('config', 'G-48CYVH0XEF');
     </script>
-    <title>GitHub Readme Streak Stats Demo</title>
+    <title>GitHub Readme Streaks</title>
     <link href="https://css-gg-cdn.pages.dev/css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css?v=<?= fileModifiedTime("./css/style.css") ?>">
     <link rel="stylesheet" href="./css/toggle-dark.css?v=<?= fileModifiedTime("./css/toggle-dark.css") ?>">
@@ -226,7 +226,7 @@ function fileModifiedTime(string $filename): int
         <div class="output top-bottom-split">
             <div class="top">
                 <h2>Preview</h2>
-                <img alt="GitHub Readme Streak Stats" src="preview.php?user=" />
+                <img alt="GitHub Readme Streaks Output" src="preview.php?user=" />
                 <div class="json" style="display: none;">
                     <pre></pre>
                 </div>
