@@ -75,24 +75,99 @@ function fileModifiedTime(string $filename): int
 </head>
 
 <body <?php echo $darkmode === "on" ? 'data-theme="dark"' : ""; ?>>
-    <h1>🔥 GitHub Readme Streak Stats</h1>
-
-    <!-- GitHub badges/links section -->
-    <div class="github">
-        <!-- GitHub Sponsors -->
-        <a class="github-button" href="https://github.com/sponsors/denvercoder1" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-heart" data-size="large" aria-label="Sponsor @denvercoder1 on GitHub">Sponsor</a>
-        <!-- View on GitHub -->
-        <a class="github-button" href="https://github.com/denvercoder1/github-readme-streak-stats" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="View denvercoder1/github-readme-streak-stats on GitHub">View on GitHub</a>
-        <!-- GitHub Star -->
-        <a class="github-button" href="https://github.com/denvercoder1/github-readme-streak-stats" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star denvercoder1/github-readme-streak-stats on GitHub">Star</a>
-    </div>
+    <h1>GitHub Readme Streaks</h1>
 
     <div class="container">
         <div class="properties">
             <h2>Properties</h2>
             <form class="parameters">
                 <label for="user">Username<span title="required">*</span></label>
-                <input class="param" type="text" id="user" name="user" placeholder="DenverCoder1" pattern="^[A-Za-z\d-]{0,39}[A-Za-z\d]$" title="Up to 40 letters or hyphens but not ending with hyphen" />
+                <input class="param" type="text" id="user" name="user" placeholder="Enter username" pattern="^[A-Za-z\d-]{0,39}[A-Za-z\d]$" title="Up to 40 letters or hyphens but not ending with hyphen" />
+
+                <label for="border-radius">Border Radius</label>
+                <input class="param" type="number" id="border-radius" name="border_radius" placeholder="4.5" value="4.5" step="0.1" min="0" />
+
+                <label for="card-height">Card Height</label>
+                <input class="param" type="number" id="card-height" name="card_height" placeholder="195" value="195" step="1" min="170" />
+
+                <label for="card-width">Card Width</label>
+                <input class="param" type="number" id="card-width" name="card_width" placeholder="495" value="495" step="1" min="300" />
+
+                <label for="date-format">Date Format</label>
+                <select class="param" id="date-format" name="date_format">
+                    <option value="">default</option>
+                    <option value="M j[, Y]">Aug 10, 2016</option>
+                    <option value="j M[ Y]">10 Aug 2016</option>
+                    <option value="[Y ]M j">2016 Aug 10</option>
+                    <option value="j/n[/Y]">10/8/2016</option>
+                    <option value="n/j[/Y]">8/10/2016</option>
+                    <option value="[Y.]n.j">2016.8.10</option>
+                </select>
+
+                <span id="exclude-days">Exclude Days</span>
+                <div class="checkbox-buttons weekdays" role="group" aria-labelledby="exclude-days">
+                    <input type="checkbox" value="Sun" id="weekday-sun" />
+                    <label for="weekday-sun" data-tooltip="Exclude Sunday" title="Exclude Sunday">S</label>
+                    <input type="checkbox" value="Mon" id="weekday-mon" />
+                    <label for="weekday-mon" data-tooltip="Exclude Monday" title="Exclude Monday">M</label>
+                    <input type="checkbox" value="Tue" id="weekday-tue" />
+                    <label for="weekday-tue" data-tooltip="Exclude Tuesday" title="Exclude Tuesday">T</label>
+                    <input type="checkbox" value="Wed" id="weekday-wed" />
+                    <label for="weekday-wed" data-tooltip="Exclude Wednesday" title="Exclude Wednesday">W</label>
+                    <input type="checkbox" value="Thu" id="weekday-thu" />
+                    <label for="weekday-thu" data-tooltip="Exclude Thursday" title="Exclude Thursday">T</label>
+                    <input type="checkbox" value="Fri" id="weekday-fri" />
+                    <label for="weekday-fri" data-tooltip="Exclude Friday" title="Exclude Friday">F</label>
+                    <input type="checkbox" value="Sat" id="weekday-sat" />
+                    <label for="weekday-sat" data-tooltip="Exclude Saturday" title="Exclude Saturday">S</label>
+                    <input type="hidden" id="excluded" name="exclude_days" class="param" />
+                </div>
+
+                <label for="hide-border">Hide Border</label>
+                <select class="param" id="hide-border" name="hide_border">
+                    <option>false</option>
+                    <option>true</option>
+                </select>
+
+                <label for="locale">Locale</label>
+                <select class="param" id="locale" name="locale">
+                    <?php foreach ($LOCALES as $locale): ?>
+                        <option value="<?php echo $locale; ?>">
+                            <?php $display = Locale::getDisplayName($locale, $locale); ?>
+                            <?php echo $display . " (" . $locale . ")"; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <label for="mode">Mode</label>
+                <select class="param" id="mode" name="mode">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+
+                <label for="output-type">Output Type</label>
+                <select class="param" id="output-type" name="type">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG</option>
+                    <option value="json">JSON</option>
+                </select>
+
+                <label for="short-numbers">Short Numbers</label>
+                <select class="param" id="short-numbers" name="short_numbers">
+                    <option>false</option>
+                    <option>true</option>
+                </select>
+
+                <span id="show-sections">Show Sections</span>
+                <div class="checkbox-buttons sections" role="group" aria-labelledby="show-sections">
+                    <input type="checkbox" value="total" id="section-total" checked />
+                    <label for="section-total" data-tooltip="Total Contributions" title="Total Contributions">Total</label>
+                    <input type="checkbox" value="current" id="section-current" checked />
+                    <label for="section-current" data-tooltip="Current Streak" title="Current Streak">Current</label>
+                    <input type="checkbox" value="longest" id="section-longest" checked />
+                    <label for="section-longest" data-tooltip="Longest Streak" title="Longest Streak">Longest</label>
+                    <input type="hidden" id="sections" name="sections" class="param" value="total,current,longest" />
+                </div>
 
                 <label for="theme">Theme</label>
                 <select class="param" id="theme" name="theme">
@@ -110,91 +185,6 @@ function fileModifiedTime(string $filename): int
                         ?>
                         <option value="<?php echo $theme; ?>" <?php echo $dataAttrs; ?>><?php echo $theme; ?></option>
                     <?php endforeach; ?>
-                </select>
-
-                <label for="hide-border">Hide Border</label>
-                <select class="param" id="hide-border" name="hide_border">
-                    <option>false</option>
-                    <option>true</option>
-                </select>
-
-                <label for="border-radius">Border Radius</label>
-                <input class="param" type="number" id="border-radius" name="border_radius" placeholder="4.5" value="4.5" step="0.1" min="0" />
-
-                <label for="locale">Locale</label>
-                <select class="param" id="locale" name="locale">
-                    <?php foreach ($LOCALES as $locale): ?>
-                        <option value="<?php echo $locale; ?>">
-                            <?php $display = Locale::getDisplayName($locale, $locale); ?>
-                            <?php echo $display . " (" . $locale . ")"; ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-
-                <label for="short-numbers">Short Numbers</label>
-                <select class="param" id="short-numbers" name="short_numbers">
-                    <option>false</option>
-                    <option>true</option>
-                </select>
-
-                <label for="date-format">Date Format</label>
-                <select class="param" id="date-format" name="date_format">
-                    <option value="">default</option>
-                    <option value="M j[, Y]">Aug 10, 2016</option>
-                    <option value="j M[ Y]">10 Aug 2016</option>
-                    <option value="[Y ]M j">2016 Aug 10</option>
-                    <option value="j/n[/Y]">10/8/2016</option>
-                    <option value="n/j[/Y]">8/10/2016</option>
-                    <option value="[Y.]n.j">2016.8.10</option>
-                </select>
-
-                <label for="mode">Streak Mode</label>
-                <select class="param" id="mode" name="mode">
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                </select>
-
-                <span id="exclude-days-label">Exclude Days</span>
-                <div class="checkbox-buttons weekdays" role="group" aria-labelledby="exclude-days-label">
-                    <input type="checkbox" value="Sun" id="weekday-sun" />
-                    <label for="weekday-sun" data-tooltip="Exclude Sunday" title="Exclude Sunday">S</label>
-                    <input type="checkbox" value="Mon" id="weekday-mon" />
-                    <label for="weekday-mon" data-tooltip="Exclude Monday" title="Exclude Monday">M</label>
-                    <input type="checkbox" value="Tue" id="weekday-tue" />
-                    <label for="weekday-tue" data-tooltip="Exclude Tuesday" title="Exclude Tuesday">T</label>
-                    <input type="checkbox" value="Wed" id="weekday-wed" />
-                    <label for="weekday-wed" data-tooltip="Exclude Wednesday" title="Exclude Wednesday">W</label>
-                    <input type="checkbox" value="Thu" id="weekday-thu" />
-                    <label for="weekday-thu" data-tooltip="Exclude Thursday" title="Exclude Thursday">T</label>
-                    <input type="checkbox" value="Fri" id="weekday-fri" />
-                    <label for="weekday-fri" data-tooltip="Exclude Friday" title="Exclude Friday">F</label>
-                    <input type="checkbox" value="Sat" id="weekday-sat" />
-                    <label for="weekday-sat" data-tooltip="Exclude Saturday" title="Exclude Saturday">S</label>
-                    <input type="hidden" id="exclude-days" name="exclude_days" class="param" />
-                </div>
-
-                <span id="show-sections-label">Show Sections</span>
-                <div class="checkbox-buttons sections" role="group" aria-labelledby="show-sections-label">
-                    <input type="checkbox" value="total" id="section-total" checked />
-                    <label for="section-total" data-tooltip="Total Contributions" title="Total Contributions">Total</label>
-                    <input type="checkbox" value="current" id="section-current" checked />
-                    <label for="section-current" data-tooltip="Current Streak" title="Current Streak">Current</label>
-                    <input type="checkbox" value="longest" id="section-longest" checked />
-                    <label for="section-longest" data-tooltip="Longest Streak" title="Longest Streak">Longest</label>
-                    <input type="hidden" id="sections" name="sections" class="param" value="total,current,longest" />
-                </div>
-
-                <label for="card-width">Card Width</label>
-                <input class="param" type="number" id="card-width" name="card_width" placeholder="495" value="495" step="1" min="300" />
-
-                <label for="card-width">Card Height</label>
-                <input class="param" type="number" id="card-width" name="card_height" placeholder="195" value="195" step="1" min="170" />
-
-                <label for="type">Output Type</label>
-                <select class="param" id="type" name="type">
-                    <option value="svg">SVG</option>
-                    <option value="png">PNG</option>
-                    <option value="json">JSON</option>
                 </select>
 
                 <details class="advanced">
