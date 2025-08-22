@@ -6,12 +6,12 @@ A profile readme appears on your profile page when you create a repository with 
 
 ## How do I include GitHub Readme Streak Stats in my Readme?
 
-Markdown files on GitHub support embedded images using Markdown or HTML. You can customize your Streak Stats image on the [demo site](https://streak-stats.demolab.com/demo/) and use the image source in either of the following ways:
+Markdown files on GitHub support embedded images using Markdown or HTML. You can customize your Streak Stats image on the [demo site](https://github-readme-streaks-main.vercel.app/demo/) and use the image source in either of the following ways:
 
 ### Markdown
 
 ```md
-[![GitHub Streak](https://streak-stats.demolab.com?user=theck13)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)
 ```
 
 ### HTML
