@@ -22,14 +22,14 @@
 2. Replace the value after `?user=` with your GitHub username
 
 ```md
-[![GitHub Streak](https://streak-stats.demolab.com?user=theck13)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)
 ```
 
 3. Star the repo 😄
 
 ### Next Steps
 
-- Check out the [Demo Site](https://streak-stats.demolab.com) or [Options](https://github.com/theck13/github-readme-streak-stats?tab=readme-ov-file#-options) below for available customizations.
+- Check out the [Demo Site](https://github-readme-streaks-main.vercel.app/demo/) or [Options](https://github.com/theck13/github-readme-streak-stats?tab=readme-ov-file#-options) below for available customizations.
 
 - It is recommended to self-host the project more better reliability. See [Deploying it on your own](https://github.com/theck13/github-readme-streak-stats?tab=readme-ov-file#-deploying-it-on-your-own) for more details.
 
@@ -39,7 +39,7 @@
 
 Here you can customize your Streak Stats card with a live preview.
 
-<https://streak-stats.demolab.com>
+<https://github-readme-streaks-main.vercel.app/demo/>
 
 [![Demo Site](https://user-images.githubusercontent.com/20955511/114579753-dbac8780-9c86-11eb-97dd-207039f67d20.gif "Demo Site")](http://streak-stats.demolab.com/demo/)
 
@@ -85,7 +85,7 @@ If the `theme` parameter is specified, any color customizations specified will b
 To enable a theme, append `&theme=` followed by the theme name to the end of the source URL:
 
 ```md
-[![GitHub Streak](https://streak-stats.demolab.com/?user=theck13&theme=dark)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streaks-main.vercel.app/demo/?user=theck13&theme=dark)](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)
 ```
 
 |     Theme      |                            Preview                            |
