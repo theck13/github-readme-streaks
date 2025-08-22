@@ -51,34 +51,34 @@ If the `theme` parameter is specified, any color customizations specified will b
 
 |         Parameter          |                     Details                      |                                              Example                                               |
 | :------------------------: | :----------------------------------------------: | :------------------------------------------------------------------------------------------------: |
-|           `user`           |        GitHub username to show stats for         |                                           `theck13`                                           |
-|          `theme`           |     The theme to apply (Default: `default`)      |                          `dark`, `radical`, etc. [🎨➜](./docs/themes.md)                           |
-|       `hide_border`        |  Make the border transparent (Default: `false`)  |                                         `true` or `false`                                          |
-|      `border_radius`       | Set the roundness of the edges (Default: `4.5`)  |                           Number `0` (sharp corners) to `248` (ellipse)                            |
 |        `background`        |  Background color (eg. `f2f2f2`, `35,d22,00f`)   | **hex code** without `#`, **css color**, or gradient in the form `angle,start_color,...,end_color` |
 |          `border`          |                   Border color                   |                             **hex code** without `#` or **css color**                              |
-|          `stroke`          |        Stroke line color between sections        |                             **hex code** without `#` or **css color**                              |
-|           `ring`           |   Color of the ring around the current streak    |                             **hex code** without `#` or **css color**                              |
-|           `fire`           |          Color of the fire in the ring           |                             **hex code** without `#` or **css color**                              |
-|      `currStreakNum`       |              Current streak number               |                             **hex code** without `#` or **css color**                              |
-|         `sideNums`         |         Total and longest streak numbers         |                             **hex code** without `#` or **css color**                              |
-|     `currStreakLabel`      |               Current streak label               |                             **hex code** without `#` or **css color**                              |
-|        `sideLabels`        |         Total and longest streak labels          |                             **hex code** without `#` or **css color**                              |
-|          `dates`           |              Date range text color               |                             **hex code** without `#` or **css color**                              |
-|     `excludeDaysLabel`     |       Excluded days of the week text color       |                             **hex code** without `#` or **css color**                              |
+|      `border_radius`       | Set the roundness of the edges (Default: `4.5`)  |                           Number `0` (sharp corners) to `248` (ellipse)                            |
 |       `date_format`        |  Date format pattern or empty for locale format  |                        See note below on [📅 Date Formats](#-date-formats)                         |
-|          `locale`          |  Locale for labels and numbers (Default: `en`)   |                            ISO 639-1 code - See [🗪 Locales](#-locales)                             |
-|      `short_numbers`       |  Use short numbers (e.g. 1.5k instead of 1,500)  |                                         `true` or `false`                                          |
-|           `type`           |          Output format (Default: `svg`)          |                              Current options: `svg`, `png` or `json`                               |
-|           `mode`           |          Streak mode (Default: `daily`)          |             `daily` (contribute daily) or `weekly` (contribute once per Sun-Sat week)              |
-|       `exclude_days`       | List of days of the week to exclude from streaks |    Comma-separated list of day abbreviations (Sun, Mon, Tue, Wed, Thu, Fri, Sat) e.g. `Sun,Sat`    |
-|    `disable_animations`    |    Disable SVG animations (Default: `false`)     |                                         `true` or `false`                                          |
-|        `card_width`        |   Width of the card in pixels (Default: `495`)   |                        Positive integer, minimum width is 100px per column                         |
+|          `dates`           |              Date range text color               |                             **hex code** without `#` or **css color**                              |
 |       `card_height`        |  Height of the card in pixels (Default: `195`)   |                             Positive integer, minimum height is 170px                              |
-| `hide_total_contributions` | Hide the total contributions (Default: `false`)  |                                         `true` or `false`                                          |
+|        `card_width`        |   Width of the card in pixels (Default: `495`)   |                        Positive integer, minimum width is 100px per column                         |
+|     `currStreakLabel`      |               Current streak label               |                             **hex code** without `#` or **css color**                              |
+|      `currStreakNum`       |              Current streak number               |                             **hex code** without `#` or **css color**                              |
+|    `disable_animations`    |    Disable SVG animations (Default: `false`)     |                                         `true` or `false`                                          |
+|       `exclude_days`       | List of days of the week to exclude from streaks |    Comma-separated list of day abbreviations (Sun, Mon, Tue, Wed, Thu, Fri, Sat) e.g. `Sun,Sat`    |
+|     `excludeDaysLabel`     |       Excluded days of the week text color       |                             **hex code** without `#` or **css color**                              |
+|           `fire`           |          Color of the fire in the ring           |                             **hex code** without `#` or **css color**                              |
+|       `hide_border`        |  Make the border transparent (Default: `false`)  |                                         `true` or `false`                                          |
 |   `hide_current_streak`    |    Hide the current streak (Default: `false`)    |                                         `true` or `false`                                          |
 |   `hide_longest_streak`    |    Hide the longest streak (Default: `false`)    |                                         `true` or `false`                                          |
+| `hide_total_contributions` | Hide the total contributions (Default: `false`)  |                                         `true` or `false`                                          |
+|          `locale`          |  Locale for labels and numbers (Default: `en`)   |                            ISO 639-1 code - See [🗪 Locales](#-locales)                            |
+|           `mode`           |          Streak mode (Default: `daily`)          |             `daily` (contribute daily) or `weekly` (contribute once per Sun-Sat week)              |
+|           `ring`           |   Color of the ring around the current streak    |                             **hex code** without `#` or **css color**                              |
+|      `short_numbers`       |  Use short numbers (e.g. 1.5k instead of 1,500)  |                                         `true` or `false`                                          |
+|        `sideLabels`        |         Total and longest streak labels          |                             **hex code** without `#` or **css color**                              |
+|         `sideNums`         |         Total and longest streak numbers         |                             **hex code** without `#` or **css color**                              |
 |      `starting_year`       |          Starting year of contributions          |   Integer, must be `2005` or later, eg. `2017`. By default, your account creation year is used.    |
+|          `stroke`          |        Stroke line color between sections        |                             **hex code** without `#` or **css color**                              |
+|          `theme`           |     The theme to apply (Default: `default`)      |                          `dark`, `radical`, etc. [🎨➜](./docs/themes.md)                           |
+|           `type`           |          Output format (Default: `svg`)          |                              Current options: `svg`, `png` or `json`                               |
+|           `user`           |        GitHub username to show stats for         |                                             `theck13`                                              |
 
 ### 🖌 Themes
 
