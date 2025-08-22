@@ -11,7 +11,7 @@ Markdown files on GitHub support embedded images using Markdown or HTML. You can
 ### Markdown
 
 ```md
-[![GitHub Streak](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)
+[![GitHub Readme Streaks](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)](https://github-readme-streaks-main.vercel.app/demo/?user=theck13)
 ```
 
 ### HTML
