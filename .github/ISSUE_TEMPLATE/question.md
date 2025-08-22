@@ -1,6 +1,6 @@
 ---
 name: Question
-about: I have a question about GitHub Streak Stats
+about: I have a question about GitHub Readme Streaks
 title: ""
 labels: "question"
 assignees: ""
