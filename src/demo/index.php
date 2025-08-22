@@ -267,7 +267,7 @@ function camelToSkewer(string $str): string
                 </div>
             </div>
             <div class="bottom">
-                <a href="https://github.com/theck13/github-readme-streak-stats/blob/main/docs/faq.md" target="_blank" class="underline-hover faq">
+                <a href="https://github.com/theck13/github-readme-streaks/blob/main/docs/faq.md" target="_blank" class="underline-hover faq">
                     Frequently Asked Questions
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <g>

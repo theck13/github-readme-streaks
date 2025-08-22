@@ -81,4 +81,4 @@ Self-hosting the code can be done online and only takes a couple minutes. The be
 
 ### [📺 Click here for a video tutorial on how to self-host on Vercel](https://www.youtube.com/watch?v=maoXtlb8t44)
 
-See [Deploying it on your own](https://github.com/theck13/github-readme-streak-stats?tab=readme-ov-file#-deploying-it-on-your-own) in the Readme for detailed instructions.
+See [Deploying it on your own](https://github.com/theck13/github-readme-streaks?tab=readme-ov-file#-deploying-it-on-your-own) in the Readme for detailed instructions.

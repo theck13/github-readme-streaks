@@ -16,7 +16,7 @@
  * 8/10/2016        8/10        n/j[/Y]
  * 2016.8.10        8.10        [Y.]n.j
  *
- * For info on valid date_format strings, see https://github.com/theck13/github-readme-streak-stats#date-formats
+ * For info on valid date_format strings, see https://github.com/theck13/github-readme-streaks#date-formats
  *
  * Right-to-Left Language Support
  * ------------------------------
