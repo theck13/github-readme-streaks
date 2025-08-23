@@ -1,22 +1,20 @@
-<p align="center">
-  <img src="https://i.imgur.com/GZHodUG.png" width="100px"/>
-  <h3 align="center">Github Readme Streak Stats</h3>
-</p>
+GitHub `README` Streaks
+====
+- [⚡ Quick Setup](#-quick-setup)
+    - [Next Steps](#next-steps)
+- [⚙ Demo Site](#-demo-site)
+- [🔧 Options](#-options)
+- [🖌 Themes](#-themes)
+- [🗪 Locales](#-locales)
+- [📅 Date Formats](#-date-formats)
+- [ℹ️ How these stats are calculated](#ℹ-how-these-stats-are-calculated)
+- [📤 Deploying it on your own](#-deploying-it-on-your-own)
+- [🤗 Contributing](#-contributing)
+- [🙋‍♂️ Support](#-support)
 
-<p align="center">
-  Display your total contributions, current streak,
-  <br/>
-  and longest streak on your GitHub profile README
-</p>
+***
 
-<p align="center">
-  <a href="https://github.com/search?q=extension%3Amd+%22github+readme+streak+stats+herokuapp%22&type=Code" alt="Users" title="Repo users">
-    <img src="https://freshidea.com/jonah/app/github-search-results/streak-stats"/></a>
-  <a href="https://discord.gg/fPrdqh3Zfu" alt="Discord" title="Dev Pro Tips Discussion & Support Server">
-    <img src="https://img.shields.io/discord/819650821314052106?color=7289DA&logo=discord&logoColor=white&style=for-the-badge"/></a>
-</p>
-
-## ⚡ Quick setup
+## ⚡ Quick Setup
 
 1. Copy-paste the markdown below into your GitHub profile README
 2. Replace the value after `?user=` with your GitHub username
