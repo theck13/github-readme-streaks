@@ -41,22 +41,22 @@ Here you can customize your Streak Stats card with a live preview.
 
 <a
     href="https://github-readme-streaks-main.vercel.app/demo/">
-    <kbd>
-        <picture>
-            <source
+<kbd>
+<picture>
+<source
                 media="(prefers-color-scheme: dark)"
                 srcset="https://github.com/user-attachments/assets/74c301de-2658-48f3-83ff-66ff90ca4ded"
             />
-            <source
+<source
                 media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
                 srcset="https://github.com/user-attachments/assets/98cd1c8e-a9b0-4762-ae76-acd2c0602c8c"
             />
-            <img
+<img
                 alt="Demo Site Screenshot"
                 src="https://github.com/user-attachments/assets/74c301de-2658-48f3-83ff-66ff90ca4ded"
             />
-        </picture>
-    </kbd>
+</picture>
+</kbd>
 </a>
 
 ## 🔧 Options
@@ -84,7 +84,7 @@ If the `theme` parameter is specified, any color customizations specified will b
 |   `hide_current_streak`    |    Hide the current streak (Default: `false`)    |                                         `true` or `false`                                          |
 |   `hide_longest_streak`    |    Hide the longest streak (Default: `false`)    |                                         `true` or `false`                                          |
 | `hide_total_contributions` | Hide the total contributions (Default: `false`)  |                                         `true` or `false`                                          |
-|          `locale`          |  Locale for labels and numbers (Default: `en`)   |                            ISO 639-1 code - See [🗪 Locales](#-locales)                            |
+|          `locale`          |  Locale for labels and numbers (Default: `en`)   |                            ISO 639-1 code - See [🗪 Locales](#-locales)                             |
 |           `mode`           |          Streak mode (Default: `daily`)          |             `daily` (contribute daily) or `weekly` (contribute once per Sun-Sat week)              |
 |           `ring`           |   Color of the ring around the current streak    |                             **hex code** without `#` or **css color**                              |
 |      `short_numbers`       |  Use short numbers (e.g. 1.5k instead of 1,500)  |                                         `true` or `false`                                          |
