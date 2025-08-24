@@ -41,22 +41,22 @@ Here you can customize your Streak Stats card with a live preview.
 
 <a
     href="https://github-readme-streaks-main.vercel.app/demo/">
-<kbd>
-<picture>
-<source
+    <kbd>
+        <picture>
+            <source
                 media="(prefers-color-scheme: dark)"
                 srcset="https://github.com/user-attachments/assets/74c301de-2658-48f3-83ff-66ff90ca4ded"
             />
-<source
+            <source
                 media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
                 srcset="https://github.com/user-attachments/assets/98cd1c8e-a9b0-4762-ae76-acd2c0602c8c"
             />
-<img
+            <img
                 alt="Demo Site Screenshot"
                 src="https://github.com/user-attachments/assets/74c301de-2658-48f3-83ff-66ff90ca4ded"
             />
-</picture>
-</kbd>
+        </picture>
+    </kbd>
 </a>
 
 ## 🔧 Options
