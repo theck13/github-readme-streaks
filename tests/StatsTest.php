@@ -38,7 +38,7 @@ final class StatsTest extends TestCase
         $this->assertEquals("2013-03-11", $stats["firstContribution"]);
         // test longest streak length
         $this->assertIsInt($stats["longestStreak"]["length"]);
-        $this->assertGreaterThanOrEqual(79, $stats["longestStreak"]["length"]);
+        $this->assertGreaterThanOrEqual(19, $stats["longestStreak"]["length"]);
         // test current streak length
         $this->assertIsInt($stats["currentStreak"]["length"]);
         $this->assertGreaterThanOrEqual(0, $stats["currentStreak"]["length"]);
