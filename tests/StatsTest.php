@@ -33,12 +33,12 @@ final class StatsTest extends TestCase
         $stats = getContributionStats($contributions);
         // test total contributions
         $this->assertIsInt($stats["totalContributions"]);
-        $this->assertGreaterThan(2300, $stats["totalContributions"]);
+        $this->assertGreaterThan(7461, $stats["totalContributions"]);
         // test first contribution
-        $this->assertEquals("2016-08-10", $stats["firstContribution"]);
+        $this->assertEquals("2013-03-11", $stats["firstContribution"]);
         // test longest streak length
         $this->assertIsInt($stats["longestStreak"]["length"]);
-        $this->assertGreaterThanOrEqual(98, $stats["longestStreak"]["length"]);
+        $this->assertGreaterThanOrEqual(79, $stats["longestStreak"]["length"]);
         // test current streak length
         $this->assertIsInt($stats["currentStreak"]["length"]);
         $this->assertGreaterThanOrEqual(0, $stats["currentStreak"]["length"]);
@@ -100,7 +100,7 @@ final class StatsTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Could not find a user with that name.");
-        getContributionGraphs("DenverCoderOne");
+        getContributionGraphs("theckOneThree");
     }
 
     /**
