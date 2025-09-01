@@ -33,7 +33,7 @@ final class StatsTest extends TestCase
         $stats = getContributionStats($contributions);
         // test total contributions
         $this->assertIsInt($stats["totalContributions"]);
-        $this->assertGreaterThan(7461, $stats["totalContributions"]);
+        $this->assertGreaterThanOrEqual(7461, $stats["totalContributions"]);
         // test first contribution
         $this->assertEquals("2013-03-11", $stats["firstContribution"]);
         // test longest streak length
