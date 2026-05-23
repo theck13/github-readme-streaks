@@ -18,8 +18,8 @@ function formatDate(string $dateString, string|null $format, string $locale, flo
     $patternGenerator = new IntlDatePatternGenerator($locale);
     // if currently streaking, display "Present"
     if ($streak !== null && $streak > 0) {
-        $localeTranslations = getTranslations($locale)
-        $formatted = $localeTranslations["Present"]
+        $localeTranslations = getTranslations($locale);
+        $formatted = $localeTranslations["Present"];
     }
     // display month, day, and year
     else if ($format) {
