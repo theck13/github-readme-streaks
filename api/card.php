@@ -8,15 +8,21 @@ declare(strict_types=1);
  * @param string $dateString String in Y-M-D format
  * @param string|null $format Date format to use, or null to use locale default
  * @param string $locale Locale code
+ * @param float|null $streak Current streak
  * @return string Formatted Date string
  */
-function formatDate(string $dateString, string|null $format, string $locale): string
+function formatDate(string $dateString, string|null $format, string $locale, float|null $streak): string
 {
     $date = new DateTime($dateString);
     $formatted = "";
     $patternGenerator = new IntlDatePatternGenerator($locale);
+    // if currently streaking, display "Present"
+    if ($streak > 0) {
+        $localeTranslations = getTranslations($locale)
+        $formatted = $localeTranslations["Present"]
+    }
     // display month, day, and year
-    if ($format) {
+    else if ($format) {
         // remove brackets, but leave text within them
         $formatted = date_format($date, str_replace(["[", "]"], "", $format));
     } else {
@@ -428,7 +434,7 @@ function generateCard(array $stats, array $params = null): string
     // current streak
     $currentStreak = formatNumber($stats["currentStreak"]["length"], $localeCode, $useShortNumbers);
     $currentStreakStart = formatDate($stats["currentStreak"]["start"], $dateFormat, $localeCode);
-    $currentStreakEnd = formatDate($stats["currentStreak"]["end"], $dateFormat, $localeCode);
+    $currentStreakEnd = formatDate($stats["currentStreak"]["end"], $dateFormat, $localeCode, $stats["currentStreak"]["length"]);
     $currentStreakRange = $currentStreakStart;
     if ($currentStreakStart != $currentStreakEnd) {
         $currentStreakRange .= " - " . $currentStreakEnd;
