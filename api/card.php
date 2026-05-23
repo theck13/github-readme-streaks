@@ -428,12 +428,12 @@ function generateCard(array $stats, array $params = null): string
 
     // total contributions
     $totalContributions = formatNumber($stats["totalContributions"], $localeCode, $useShortNumbers);
-    $firstContribution = formatDate($stats["firstContribution"], $dateFormat, $localeCode);
+    $firstContribution = formatDate($stats["firstContribution"], $dateFormat, $localeCode, null);
     $totalContributionsRange = $firstContribution . " - " . $localeTranslations["Present"];
 
     // current streak
     $currentStreak = formatNumber($stats["currentStreak"]["length"], $localeCode, $useShortNumbers);
-    $currentStreakStart = formatDate($stats["currentStreak"]["start"], $dateFormat, $localeCode);
+    $currentStreakStart = formatDate($stats["currentStreak"]["start"], $dateFormat, $localeCode, null);
     $currentStreakEnd = formatDate($stats["currentStreak"]["end"], $dateFormat, $localeCode, $stats["currentStreak"]["length"]);
     $currentStreakRange = $currentStreakStart;
     if ($currentStreakStart != $currentStreakEnd) {
@@ -442,8 +442,8 @@ function generateCard(array $stats, array $params = null): string
 
     // longest streak
     $longestStreak = formatNumber($stats["longestStreak"]["length"], $localeCode, $useShortNumbers);
-    $longestStreakStart = formatDate($stats["longestStreak"]["start"], $dateFormat, $localeCode);
-    $longestStreakEnd = formatDate($stats["longestStreak"]["end"], $dateFormat, $localeCode);
+    $longestStreakStart = formatDate($stats["longestStreak"]["start"], $dateFormat, $localeCode, null);
+    $longestStreakEnd = formatDate($stats["longestStreak"]["end"], $dateFormat, $localeCode, null);
     $longestStreakRange = $longestStreakStart;
     if ($longestStreakStart != $longestStreakEnd) {
         $longestStreakRange .= " - " . $longestStreakEnd;
