@@ -15,39 +15,20 @@ function formatDate(string $dateString, string|null $format, string $locale): st
     $date = new DateTime($dateString);
     $formatted = "";
     $patternGenerator = new IntlDatePatternGenerator($locale);
-    // if current year, display only month and day
-    if (date_format($date, "Y") == date("Y")) {
-        if ($format) {
-            // remove brackets and all text within them
-            $formatted = date_format($date, preg_replace("/\[.*?\]/", "", $format));
-        } else {
-            // format without year using locale
-            $pattern = $patternGenerator->getBestPattern("MMM d");
-            $dateFormatter = new IntlDateFormatter(
-                $locale,
-                IntlDateFormatter::MEDIUM,
-                IntlDateFormatter::NONE,
-                pattern: $pattern
-            );
-            $formatted = $dateFormatter->format($date);
-        }
-    }
-    // otherwise, display month, day, and year
-    else {
-        if ($format) {
-            // remove brackets, but leave text within them
-            $formatted = date_format($date, str_replace(["[", "]"], "", $format));
-        } else {
-            // format with year using locale
-            $pattern = $patternGenerator->getBestPattern("yyyy MMM d");
-            $dateFormatter = new IntlDateFormatter(
-                $locale,
-                IntlDateFormatter::MEDIUM,
-                IntlDateFormatter::NONE,
-                pattern: $pattern
-            );
-            $formatted = $dateFormatter->format($date);
-        }
+    // display month, day, and year
+    if ($format) {
+        // remove brackets, but leave text within them
+        $formatted = date_format($date, str_replace(["[", "]"], "", $format));
+    } else {
+        // format with year using locale
+        $pattern = $patternGenerator->getBestPattern("yyyy MMM d");
+        $dateFormatter = new IntlDateFormatter(
+            $locale,
+            IntlDateFormatter::MEDIUM,
+            IntlDateFormatter::NONE,
+            pattern: $pattern
+        );
+        $formatted = $dateFormatter->format($date);
     }
     // sanitize and return formatted date
     return htmlspecialchars($formatted);
