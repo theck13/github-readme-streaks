@@ -17,7 +17,7 @@ function formatDate(string $dateString, string|null $format, string $locale, flo
     $formatted = "";
     $patternGenerator = new IntlDatePatternGenerator($locale);
     // if currently streaking, display "Present"
-    if ($streak !== null && $streak > 0) {
+    if ($streak > 0) {
         $localeTranslations = getTranslations($locale);
         $formatted = $localeTranslations["Present"];
     }
