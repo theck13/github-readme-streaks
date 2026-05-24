@@ -454,7 +454,7 @@ window.addEventListener(
     // when weekdays are toggled, update the input field
     document.querySelectorAll(".weekdays input[type='checkbox']").forEach((el) => {
       el.addEventListener("click", () => {
-        updateCheckboxTextField(".weekdays", "#exclude-days");
+        updateCheckboxTextField(".weekdays", "#excluded");
       });
     });
     // when sections are toggled, update the input field

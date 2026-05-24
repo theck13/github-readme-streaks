@@ -84,7 +84,7 @@ If the `theme` parameter is specified, any color customizations specified will b
 |   `hide_current_streak`    |    Hide the current streak (Default: `false`)    |                                         `true` or `false`                                          |
 |   `hide_longest_streak`    |    Hide the longest streak (Default: `false`)    |                                         `true` or `false`                                          |
 | `hide_total_contributions` | Hide the total contributions (Default: `false`)  |                                         `true` or `false`                                          |
-|          `locale`          |  Locale for labels and numbers (Default: `en`)   |                            ISO 639-1 code - See [🗪 Locales](#-locales)                             |
+|          `locale`          |  Locale for labels and numbers (Default: `en`)   |                            ISO 639-1 code - See [🗪 Locales](#-locales)                            |
 |           `mode`           |          Streak mode (Default: `daily`)          |             `daily` (contribute daily) or `weekly` (contribute once per Sun-Sat week)              |
 |           `ring`           |   Color of the ring around the current streak    |                             **hex code** without `#` or **css color**                              |
 |      `short_numbers`       |  Use short numbers (e.g. 1.5k instead of 1,500)  |                                         `true` or `false`                                          |

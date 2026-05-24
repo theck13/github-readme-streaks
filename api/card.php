@@ -8,46 +8,33 @@ declare(strict_types=1);
  * @param string $dateString String in Y-M-D format
  * @param string|null $format Date format to use, or null to use locale default
  * @param string $locale Locale code
+ * @param float|null $streak Current streak
  * @return string Formatted Date string
  */
-function formatDate(string $dateString, string|null $format, string $locale): string
+function formatDate(string $dateString, string|null $format, string $locale, float|null $streak): string
 {
     $date = new DateTime($dateString);
     $formatted = "";
     $patternGenerator = new IntlDatePatternGenerator($locale);
-    // if current year, display only month and day
-    if (date_format($date, "Y") == date("Y")) {
-        if ($format) {
-            // remove brackets and all text within them
-            $formatted = date_format($date, preg_replace("/\[.*?\]/", "", $format));
-        } else {
-            // format without year using locale
-            $pattern = $patternGenerator->getBestPattern("MMM d");
-            $dateFormatter = new IntlDateFormatter(
-                $locale,
-                IntlDateFormatter::MEDIUM,
-                IntlDateFormatter::NONE,
-                pattern: $pattern
-            );
-            $formatted = $dateFormatter->format($date);
-        }
+    // if currently streaking, display "Present"
+    if ($streak > 0) {
+        $localeTranslations = getTranslations($locale);
+        $formatted = $localeTranslations["Present"];
     }
-    // otherwise, display month, day, and year
-    else {
-        if ($format) {
-            // remove brackets, but leave text within them
-            $formatted = date_format($date, str_replace(["[", "]"], "", $format));
-        } else {
-            // format with year using locale
-            $pattern = $patternGenerator->getBestPattern("yyyy MMM d");
-            $dateFormatter = new IntlDateFormatter(
-                $locale,
-                IntlDateFormatter::MEDIUM,
-                IntlDateFormatter::NONE,
-                pattern: $pattern
-            );
-            $formatted = $dateFormatter->format($date);
-        }
+    // display month, day, and year
+    else if ($format) {
+        // remove brackets, but leave text within them
+        $formatted = date_format($date, str_replace(["[", "]"], "", $format));
+    } else {
+        // format with year using locale
+        $pattern = $patternGenerator->getBestPattern("yyyy MMM d");
+        $dateFormatter = new IntlDateFormatter(
+            $locale,
+            IntlDateFormatter::MEDIUM,
+            IntlDateFormatter::NONE,
+            pattern: $pattern
+        );
+        $formatted = $dateFormatter->format($date);
     }
     // sanitize and return formatted date
     return htmlspecialchars($formatted);
@@ -441,13 +428,13 @@ function generateCard(array $stats, array $params = null): string
 
     // total contributions
     $totalContributions = formatNumber($stats["totalContributions"], $localeCode, $useShortNumbers);
-    $firstContribution = formatDate($stats["firstContribution"], $dateFormat, $localeCode);
+    $firstContribution = formatDate($stats["firstContribution"], $dateFormat, $localeCode, null);
     $totalContributionsRange = $firstContribution . " - " . $localeTranslations["Present"];
 
     // current streak
     $currentStreak = formatNumber($stats["currentStreak"]["length"], $localeCode, $useShortNumbers);
-    $currentStreakStart = formatDate($stats["currentStreak"]["start"], $dateFormat, $localeCode);
-    $currentStreakEnd = formatDate($stats["currentStreak"]["end"], $dateFormat, $localeCode);
+    $currentStreakStart = formatDate($stats["currentStreak"]["start"], $dateFormat, $localeCode, null);
+    $currentStreakEnd = formatDate($stats["currentStreak"]["end"], $dateFormat, $localeCode, $stats["currentStreak"]["length"]);
     $currentStreakRange = $currentStreakStart;
     if ($currentStreakStart != $currentStreakEnd) {
         $currentStreakRange .= " - " . $currentStreakEnd;
@@ -455,8 +442,8 @@ function generateCard(array $stats, array $params = null): string
 
     // longest streak
     $longestStreak = formatNumber($stats["longestStreak"]["length"], $localeCode, $useShortNumbers);
-    $longestStreakStart = formatDate($stats["longestStreak"]["start"], $dateFormat, $localeCode);
-    $longestStreakEnd = formatDate($stats["longestStreak"]["end"], $dateFormat, $localeCode);
+    $longestStreakStart = formatDate($stats["longestStreak"]["start"], $dateFormat, $localeCode, null);
+    $longestStreakEnd = formatDate($stats["longestStreak"]["end"], $dateFormat, $localeCode, null);
     $longestStreakRange = $longestStreakStart;
     if ($longestStreakStart != $longestStreakEnd) {
         $longestStreakRange .= " - " . $longestStreakEnd;
