@@ -198,7 +198,7 @@ final class OptionsTest extends TestCase
     {
         $year = date("Y");
         $formatted = formatDate("$year-04-12", "M j[, Y]", "en");
-        $this->assertEquals("Apr 12", $formatted);
+        $this->assertEquals("Apr 12, $year", $formatted);
     }
 
     /**
