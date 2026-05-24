@@ -197,7 +197,7 @@ final class OptionsTest extends TestCase
     public function testDateFormatSameYear(): void
     {
         $year = date("Y");
-        $formatted = formatDate("$year-04-12", "M j[, Y]", "en");
+        $formatted = formatDate("$year-04-12", "M j[, Y]", "en", null);
         $this->assertEquals("Apr 12, $year", $formatted);
     }
 
@@ -206,7 +206,7 @@ final class OptionsTest extends TestCase
      */
     public function testDateFormatDifferentYear(): void
     {
-        $formatted = formatDate("2000-04-12", "M j[, Y]", "en");
+        $formatted = formatDate("2000-04-12", "M j[, Y]", "en", null);
         $this->assertEquals("Apr 12, 2000", $formatted);
     }
 
@@ -215,7 +215,7 @@ final class OptionsTest extends TestCase
      */
     public function testDateFormatNoBracketsDiffYear(): void
     {
-        $formatted = formatDate("2000-04-12", "Y/m/d", "en");
+        $formatted = formatDate("2000-04-12", "Y/m/d", "en", null);
         $this->assertEquals("2000/04/12", $formatted);
     }
 
@@ -225,7 +225,7 @@ final class OptionsTest extends TestCase
     public function testDateFormatNoBracketsSameYear(): void
     {
         $year = date("Y");
-        $formatted = formatDate("$year-04-12", "Y/m/d", "en");
+        $formatted = formatDate("$year-04-12", "Y/m/d", "en", null);
         $this->assertEquals("$year/04/12", $formatted);
     }
 
