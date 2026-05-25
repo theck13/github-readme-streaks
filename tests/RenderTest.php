@@ -78,7 +78,7 @@ final class RenderTest extends TestCase
         // Check that the card is rendered as expected
         $render = generateCard($this->testStats, $this->testParams);
         $this->assertStringContainsString("2016-08-10 - Present", $render);
-        $this->assertStringContainsString("2019-03-28 - Present", $render);
+        $this->assertStringContainsString("2019-03-28 - 04-12", $render);
         $this->assertStringContainsString("2016-12-19 - 2016-03-14", $render);
     }
 
@@ -95,7 +95,7 @@ final class RenderTest extends TestCase
         $this->assertStringContainsString("2016.8.10 - 今", $render);
         $this->assertStringContainsString("16", $render);
         $this->assertStringContainsString("現在のストリーク", $render);
-        $this->assertStringContainsString("2019.3.28 - 今", $render);
+        $this->assertStringContainsString("2019.3.28 - 2019.4.12", $render);
         $this->assertStringContainsString("86", $render);
         $this->assertStringContainsString("最長のストリーク", $render);
         $this->assertStringContainsString("2016.12.19 - 2016.3.14", $render);
