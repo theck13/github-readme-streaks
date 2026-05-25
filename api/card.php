@@ -423,7 +423,8 @@ function generateCard(array $stats, array $params = null): string
     // total contributions
     $totalContributions = formatNumber($stats["totalContributions"], $localeCode, $useShortNumbers);
     $firstContribution = formatDate($stats["firstContribution"], $dateFormat, $localeCode);
-    $totalContributionsRange = $firstContribution . " - " . $localeTranslations["Present"];
+    $lastContribution = formatDate($stats["currentStreak"]["end"], $dateFormat, $localeCode);
+    $totalContributionsRange = $firstContribution . " - " . $lastContribution;
 
     // current streak
     $currentStreak = formatNumber($stats["currentStreak"]["length"], $localeCode, $useShortNumbers);

@@ -77,7 +77,7 @@ final class RenderTest extends TestCase
         $this->testParams["date_format"] = "[Y-]m-d";
         // Check that the card is rendered as expected
         $render = generateCard($this->testStats, $this->testParams);
-        $this->assertStringContainsString("2016-08-10 - Present", $render);
+        $this->assertStringContainsString("2016-08-10 - $year-04-12", $render);
         $this->assertStringContainsString("2019-03-28 - 04-12", $render);
         $this->assertStringContainsString("2016-12-19 - 2016-03-14", $render);
     }
