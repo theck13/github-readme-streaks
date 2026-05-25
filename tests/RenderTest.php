@@ -92,7 +92,7 @@ final class RenderTest extends TestCase
         $render = generateCard($this->testStats, $this->testParams);
         $this->assertStringContainsString("2,048", $render);
         $this->assertStringContainsString("総ｺﾝﾄﾘﾋﾞｭｰｼｮﾝ数", $render);
-        $this->assertStringContainsString("2016.8.10 - 今", $render);
+        $this->assertStringContainsString("2016.8.10 - 2019.4.12", $render);
         $this->assertStringContainsString("16", $render);
         $this->assertStringContainsString("現在のストリーク", $render);
         $this->assertStringContainsString("2019.3.28 - 2019.4.12", $render);
